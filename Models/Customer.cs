@@ -27,7 +27,7 @@ namespace RumisBC.Models
         [Display(Name = "Şifre")]
         [DataType(DataType.Password)]
         [MaxLength(20, ErrorMessage = "En fazla 20 karakter kullanabilirsiniz.")]
-        [MinLength(5, ErrorMessage = "En az 5 karakter kullanmalısınız.")]
+        [MinLength(3, ErrorMessage = "En az 5 karakter kullanmalısınız.")]
         public string Password { get; set; }
 
         [Required(ErrorMessage = "Lütfen şifrenizi tekrar giriniz.")]

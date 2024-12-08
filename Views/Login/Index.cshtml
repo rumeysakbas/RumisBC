@@ -1,4 +1,37 @@
-﻿@model RumisBC.Models.Customer
+﻿@model RumisBC.Models.LoginModel
+
+<div class="login-container">
+    <!-- Sol taraftaki resim -->
+    <div class="login-image"></div>
+
+    <!-- Sağ taraftaki form -->
+    <div class="login-form">
+        <h2>Giriş Yap</h2>
+        @if (ViewBag.msg != null)
+        {
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                @ViewBag.msg
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        }
+        <form asp-action="Login" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label">Email</label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label">Şifre</label>
+                <input asp-for="Password" type="password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Giriş Yap" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
 
 <style>
     * {
@@ -86,30 +119,5 @@
         }
 </style>
 
-<div class="login-container">
-    <!-- Sol taraftaki resim -->
-    <div class="login-image"></div>
-
-    <!-- Sağ taraftaki form -->
-    <div class="login-form">
-        <h2>Giriş Yap</h2>
-        <form asp-action="Login" method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Email" class="control-label">Email</label>
-                <input asp-for="Email" class="form-control" />
-                <span asp-validation-for="Email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Password" class="control-label">Şifre</label>
-                <input asp-for="Password" type="password" class="form-control" />
-                <span asp-validation-for="Password" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Giriş Yap" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
 
 

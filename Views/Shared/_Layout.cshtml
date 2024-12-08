@@ -110,7 +110,7 @@
                         </li>
                     </ul>
                     <ul class="navbar-nav ms-auto">
-                        @if (Context.Session.GetString("UserId") is null)
+                        @if (Context.Session.GetString("UserId") is null && Context.Session.GetString("AdminId") is null)
                         {
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Login" asp-action="Index">
@@ -126,7 +126,7 @@
                         {
                             
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Login" asp-action="Index">
+                                <a class="nav-link text-dark">
                                     <i class="fas fa-user" style="margin-right: 10px;"></i><strong>@Context.Session.GetString("UserName")</strong>
                                 </a>
                             </li>
