@@ -1,0 +1,159 @@
+﻿@model RumisBC.Models.Employer
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = null;
+}
+
+<h1>Create</h1>
+
+<h4>Employer</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="FirstName" class="control-label"></label>
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LastName" class="control-label"></label>
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Expertise" class="control-label"></label>
+                <input asp-for="Expertise" class="form-control" />
+                <span asp-validation-for="Expertise" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WorkDate" class="control-label"></label>
+                <input asp-for="WorkDate" class="form-control" />
+                <span asp-validation-for="WorkDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StartTime" class="control-label"></label>
+                <input asp-for="StartTime" class="form-control" />
+                <span asp-validation-for="StartTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EndTime" class="control-label"></label>
+                <input asp-for="EndTime" class="form-control" />
+                <span asp-validation-for="EndTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+
+        <div class="action-buttons">
+            <a href="@Url.Action("Index", "Admin")" class="action-buttons" style="background-color:black ; color:red">Geri Dön</a>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f7fc;
+        margin: 0;
+        padding: 20px;
+    }
+
+    h1 {
+        color: #333;
+    }
+
+    h4 {
+        color: #555;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .control-label {
+        font-weight: bold;
+        color: #444;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin-top: 5px;
+    }
+
+        .form-control:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+
+    .text-danger {
+        color: red;
+        font-size: 0.875rem;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 4px;
+        text-align: center;
+        cursor: pointer;
+    }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #004085;
+        }
+
+    .row {
+        display: flex;
+        justify-content: center;
+    }
+
+    .col-md-4 {
+        max-width: 500px;
+        width: 100%;
+    }
+
+    hr {
+        border-color: #ccc;
+    }
+
+    a {
+        color: #007bff;
+        text-decoration: none;
+    }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+    .action-buttons a {
+        display: inline-block;
+        padding: 8px 12px;
+        margin-right: 5px;
+        margin-bottom: 5px;
+        text-decoration: none;
+        background-color: #007bff;
+        color: #fff;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+    }
+
+        .action-buttons a:hover {
+            background-color: #0056b3;
+        }
+</style>

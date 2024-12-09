@@ -1,0 +1,181 @@
+﻿@model IEnumerable<RumisBC.Models.Employer>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = null;
+}
+
+<h1>Index</h1>
+
+<p>
+    <div class="action-buttons">
+        <a href="@Url.Action("Index", "Admin")" class="action-buttons" style="background-color:black ; color:red">Geri Dön</a>
+    </div>
+    <a asp-action="Create" class="btn btn-primary">Yeni Calişan Ekle</a>
+</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Expertise)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WorkDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EndTime)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Expertise)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.WorkDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StartTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EndTime)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.EmployerID" class="btn btn-warning btn-sm">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.EmployerID" class="btn btn-info btn-sm">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.EmployerID" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            border-radius: 4px;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            color: white;
+            border: none;
+        }
+
+            .btn-primary:hover {
+                background-color: #0056b3;
+            }
+
+        .btn-warning {
+            background-color: #ffc107;
+            color: white;
+            border: none;
+        }
+
+            .btn-warning:hover {
+                background-color: #e0a800;
+            }
+
+        .btn-info {
+            background-color: #17a2b8;
+            color: white;
+            border: none;
+        }
+
+            .btn-info:hover {
+                background-color: #138496;
+            }
+
+        .btn-danger {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+        }
+
+            .btn-danger:hover {
+                background-color: #c82333;
+            }
+
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            color: #333;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        .table-striped tbody tr:nth-child(odd) {
+            background-color: #f9f9f9;
+        }
+
+        .table-striped tbody tr:hover {
+            background-color: #f1f1f1;
+        }
+
+    .action-buttons a {
+        display: inline-block;
+        padding: 8px 12px;
+        margin-right: 5px;
+        margin-bottom: 5px;
+        text-decoration: none;
+        background-color: #007bff;
+        color: #fff;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+    }
+
+        .action-buttons a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+

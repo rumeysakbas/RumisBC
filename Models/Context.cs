@@ -13,5 +13,8 @@ namespace RumisBC.Models
         {
             optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=BeautyCenterDB;Trusted_Connection=True;");
         }
+
+
+        public DbSet<RumisBC.Models.Employer>? Employer { get; set; }
     }
 }

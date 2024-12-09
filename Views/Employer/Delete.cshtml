@@ -1,0 +1,166 @@
+﻿@model RumisBC.Models.Employer
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = null;
+}
+
+<h1>Çalışan Sil</h1>
+
+<h3>Silmek istediğinizden emin misiniz? </h3>
+<div class="delete-container">
+    <h4>Çalışan Bilgileri</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Expertise)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Expertise)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.WorkDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.WorkDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.StartTime)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.StartTime)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.EndTime)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.EndTime)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete" class="delete-form">
+        <input type="hidden" asp-for="EmployerID" />
+        <input type="submit" value="Sil" class="btn btn-danger" />
+        <div class="action-buttons">
+            <a href="@Url.Action("Index", "Admin")" class="btn btn-back">Geri Dön</a>
+        </div>
+    </form>
+</div>
+
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+        margin: 0;
+        padding: 0;
+    }
+
+    .delete-container {
+        background-color: #ffffff;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        padding: 20px;
+        margin: 50px auto;
+        max-width: 600px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+        text-align: center;
+        color: #333;
+    }
+
+    h3 {
+        text-align: center;
+        color: #666;
+    }
+
+    h4 {
+        color: #444;
+        margin-bottom: 20px;
+    }
+
+    hr {
+        border: 0;
+        height: 1px;
+        background-color: #ddd;
+        margin-bottom: 20px;
+    }
+
+    dl {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    dt {
+        font-weight: bold;
+        color: #555;
+        flex: 1 1 30%;
+        text-align: right;
+    }
+
+    dd {
+        flex: 1 1 65%;
+        margin-left: 0;
+        color: #333;
+    }
+
+    .delete-form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px; /* Butonlar arasındaki boşluk */
+        margin-top: 20px;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 10px 15px;
+        border-radius: 4px;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .btn-danger {
+        background-color: #d9534f;
+        color: white;
+        border: none;
+    }
+
+        .btn-danger:hover {
+            background-color: #c9302c;
+        }
+
+    .btn-back {
+        background-color: black;
+        color: red;
+        border: none;
+    }
+
+        .btn-back:hover {
+            background-color: #333;
+            color: white;
+        }
+
+    .action-buttons {
+        display: inline-block;
+    }
+</style>
+
+
