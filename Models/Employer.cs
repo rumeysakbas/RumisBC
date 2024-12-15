@@ -23,6 +23,10 @@ namespace RumisBC.Models
         public string Expertise { get; set; }
 
         [Required]
+        [Display(Name = "Islem Ucreti")]
+        public int Price { get; set; }
+
+        [Required]
         [Display(Name = "Çalışacağı Tarih")]
         [DataType(DataType.Date)]
         public DateTime WorkDate { get; set; }

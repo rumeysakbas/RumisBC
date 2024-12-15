@@ -7,11 +7,13 @@ namespace RumisBC.Models
     {
 		public DbSet<Admin> Admins { get; set; }
 		public DbSet<Customer> Customers { get; set; }
+        public DbSet<Employer> Employers { get; set; }
+        public DbSet<Booking> Bookings { get; set; }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=BeautyCenterDB;Trusted_Connection=True;");
+            optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=RumisBC;Trusted_Connection=True;");
         }
 
 

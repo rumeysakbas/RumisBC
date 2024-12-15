@@ -12,8 +12,8 @@ using RumisBC.Models;
 namespace RumisBC.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20241209193331_second")]
-    partial class second
+    [Migration("20241215151140_asdas")]
+    partial class asdas
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -66,14 +66,6 @@ namespace RumisBC.Migrations
 
                     b.Property<int>("EmployerID")
                         .HasColumnType("int");
-
-                    b.Property<string>("EndTime")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("StartTime")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("BookingID");
 
@@ -138,9 +130,8 @@ namespace RumisBC.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("EmployerID"), 1L, 1);
 
-                    b.Property<string>("EndTime")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("EndTime")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Expertise")
                         .IsRequired()
@@ -154,9 +145,11 @@ namespace RumisBC.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("StartTime")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Price")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("StartTime")
+                        .HasColumnType("datetime2");
 
                     b.Property<DateTime>("WorkDate")
                         .HasColumnType("datetime2");

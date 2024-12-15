@@ -14,14 +14,6 @@ namespace RumisBC.Models
         public DateTime BookingDate { get; set; } 
 
         [Required]
-        [Display(Name = "Başlangıç Saati")]
-        public string StartTime { get; set; } 
-
-        [Required]
-        [Display(Name = "Bitiş Saati")]
-        public string EndTime { get; set; } 
-
-        [Required]
         [Display(Name = "Müşteri Adı")]
         public string CustomerName { get; set; } 
 

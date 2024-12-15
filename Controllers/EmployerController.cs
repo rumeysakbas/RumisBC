@@ -56,7 +56,7 @@ namespace RumisBC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("EmployerID,FirstName,LastName,Expertise,WorkDate,StartTime,EndTime")] Employer employer)
+        public async Task<IActionResult> Create([Bind("EmployerID,FirstName,LastName,Expertise,Price,WorkDate,StartTime,EndTime")] Employer employer)
         {
             if (ModelState.IsValid)
             {
@@ -88,7 +88,7 @@ namespace RumisBC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("EmployerID,FirstName,LastName,Expertise,WorkDate,StartTime,EndTime")] Employer employer)
+        public async Task<IActionResult> Edit(int id, [Bind("EmployerID,FirstName,LastName,Expertise,Price,WorkDate,StartTime,EndTime")] Employer employer)
         {
             if (id != employer.EmployerID)
             {

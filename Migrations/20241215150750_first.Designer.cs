@@ -12,8 +12,8 @@ using RumisBC.Models;
 namespace RumisBC.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20241209200650_third")]
-    partial class third
+    [Migration("20241215150750_first")]
+    partial class first
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -66,14 +66,6 @@ namespace RumisBC.Migrations
 
                     b.Property<int>("EmployerID")
                         .HasColumnType("int");
-
-                    b.Property<string>("EndTime")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("StartTime")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("BookingID");
 
@@ -152,6 +144,9 @@ namespace RumisBC.Migrations
                     b.Property<string>("LastName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Price")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("StartTime")
                         .HasColumnType("datetime2");
