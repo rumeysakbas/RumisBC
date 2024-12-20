@@ -1,0 +1,32 @@
+﻿@model List<RumisBC.Models.AppointmentViewModel>
+
+<h2>Randevularım</h2>
+
+@if (Model != null && Model.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Tarih</th>
+                <th>Uzmanlık</th>
+                <th>Çalışan Adı</th>
+                <th>Fiyat</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var appointment in Model)
+            {
+                <tr>
+                    <td>@appointment.BookingDate.ToString("dd.MM.yyyy HH:mm")</td>
+                    <td>@appointment.Expertise</td>
+                    <td>@appointment.EmployerName</td>
+                    <td>@appointment.Price.ToString("C")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>Hiç randevunuz bulunmamaktadır.</p>
+}
