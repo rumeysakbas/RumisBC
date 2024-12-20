@@ -10,53 +10,137 @@
     <h4>Çalışan</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.FirstName)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.FirstName)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.LastName)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.LastName)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Expertise)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Expertise)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Price)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Price)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.WorkDate)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.WorkDate)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.StartTime)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.StartTime)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.EndTime)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.EndTime)
         </dd>
     </dl>
-    
+
     <form asp-action="Delete">
         <input type="hidden" asp-for="EmployerID" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
+        <input type="submit" value="Delete" class="btn btn-danger" /> 
+        <div class="action-buttons">
+            <a href="@Url.Action("Index", "Employer")" class="action-buttons" style="background-color:black ; color:red">Geri Dön</a>
+        </div>
     </form>
 </div>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+        color: #333;
+    }
+
+    h3 {
+        font-size: 24px;
+        color: #d9534f;
+        margin-bottom: 20px;
+    }
+
+    h4 {
+        font-size: 20px;
+        color: #555;
+    }
+
+    dl.row {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        padding: 20px;
+        border-radius: 8px;
+    }
+
+    dt.col-sm-2 {
+        font-weight: bold;
+        color: #555;
+    }
+
+    dd.col-sm-10 {
+        margin-bottom: 10px;
+        padding: 8px;
+        background-color: #f2f2f2;
+        border-radius: 4px;
+    }
+
+    input[type="submit"] {
+        background-color: #d9534f;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+    }
+
+        input[type="submit"]:hover {
+            background-color: #c9302c;
+        }
+
+    a {
+        color: #5bc0de;
+        font-size: 16px;
+        text-decoration: none;
+        padding-left: 10px;
+    }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+    .action-buttons a {
+        display: inline-block;
+        padding: 8px 12px;
+        margin-right: 5px;
+        margin-top: 10px;
+        margin-bottom: 5px;
+        text-decoration: none;
+        background-color: #007bff;
+        color: #fff;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+    }
+
+        .action-buttons a:hover {
+            background-color: #0056b3;
+        }
+</style>
+
