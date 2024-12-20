@@ -1,3 +1,42 @@
-﻿
+﻿@model IEnumerable<dynamic>
 
-<h1>Randevu</h1>
+<h2>Randevu Al</h2>
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+}
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">@TempData["ErrorMessage"]</div>
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Uzmanlık Alanı</th>
+            <th>Çalışan Adı</th>
+            <th>İşlem Ücreti</th>
+            <th>Randevu Saatleri</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var slot in Model)
+        {
+            <tr>
+                <td>@slot.Expertise</td>
+                <td>@slot.EmployeeName</td>
+                <td>@slot.Price.ToString("C")</td>
+                <td>@slot.StartTime.ToString("HH:mm") - @slot.EndTime.ToString("HH:mm")</td>
+                <td>
+                    <form asp-action="BookAppointment" method="post">
+                        <input type="hidden" name="employeeId" value="@slot.EmployeeId" />
+                        <input type="hidden" name="startTime" value="@slot.StartTime.ToString("o")" />
+                        <button type="submit" class="btn btn-primary">Randevu Al</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
