@@ -1,0 +1,111 @@
+﻿@{
+    ViewData["Title"] = "Hangi Model? Hangi Tarz? Hemen Keşfet!";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<form asp-action="UploadPhoto" method="post" class="mb-4">
+    @Html.AntiForgeryToken()  <!-- Anti-forgery token -->
+
+    <div class="form-group">
+        <label for="photoDescription">Biraz kendinden bahset... </label>
+        <textarea id="photoDescription" name="photoDescription" class="form-control" required></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Gönder</button>
+</form>
+
+@if (ViewBag.Recommendation != null)
+{
+    <div class="recommendation-container">
+        <h4>Yapay Zeka Önerisi</h4>
+        <p>@ViewBag.Recommendation</p>
+    </div>
+}
+
+@if (ViewBag.Message != null)
+{
+    <div class="alert alert-warning">
+        @ViewBag.Message
+    </div>
+}
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-image: url('/images/dresim.jpg'); /* Fotoğrafın yolu */
+        background-size: cover; /* Fotoğrafı tamamen kaplar */
+        background-repeat: no-repeat; /* Fotoğrafın tekrar etmesini engeller */
+        background-attachment: fixed; /* Arka plan kaydırıldığında sabit kalır */
+        color: #333;
+        margin: 0;
+        padding: 0;
+    }
+
+    h1 {
+        color: rebeccapurple;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    form {
+        max-width: 600px;
+        margin: 0 auto;
+        background: rgba(255, 255, 255, 0.9); /* Formun arkaplanını şeffaf yapar */
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group label {
+        font-weight: bold;
+        color: #555;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 14px;
+    }
+
+    .btn-primary {
+        background-color: rebeccapurple;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+    }
+
+        .btn-primary:hover {
+            background-color: darkturquoise;
+        }
+
+    .recommendation-container {
+        max-width: 600px;
+        margin: 20px auto;
+        background: #e8f5e9;
+        padding: 15px;
+        border-radius: 8px;
+        border: 1px solid #c8e6c9;
+    }
+
+    .alert-warning {
+        max-width: 600px;
+        margin: 20px auto;
+        padding: 10px;
+        background-color: #ffefc1;
+        border: 1px solid #ffd700;
+        border-radius: 8px;
+        text-align: center;
+    }
+</style>

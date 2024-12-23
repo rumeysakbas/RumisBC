@@ -1,4 +1,16 @@
+using System.Net.Http.Headers;
+
 var builder = WebApplication.CreateBuilder(args);
+
+var openAiKey = builder.Configuration["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"];
+builder.Services.AddSingleton(new HttpClient
+{
+    BaseAddress = new Uri("https://api.openai.com/v1/"),
+    DefaultRequestHeaders =
+    {
+        Authorization = new AuthenticationHeaderValue("Bearer", openAiKey)
+    }
+});
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
