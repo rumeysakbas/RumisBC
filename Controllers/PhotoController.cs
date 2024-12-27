@@ -56,7 +56,7 @@ namespace WebProject.Controllers
                 }
             };
 
-            var apiKey = "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";  // Burada gerçek OpenAI API anahtarınızı kullanmalısınız.
+            var apiKey = " ";  // Burada gerçek OpenAI API anahtarınızı kullanmalısınız.
 
             var requestMessage = new HttpRequestMessage(HttpMethod.Post, "https://api.openai.com/v1/chat/completions")
             {
